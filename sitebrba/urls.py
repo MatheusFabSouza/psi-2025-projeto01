@@ -7,7 +7,9 @@ urlpatterns = [
 ]
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('sitebrba.urls')), 
+    path('admin/', admin.site.urls), 
+    path("", views.index, name="inicio"),
+    path("elenco/", views.elenco, name="elenco"),
+    path("sobre/", views.sobre, name="sobre"),
 ]
 
