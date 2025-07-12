@@ -11,6 +11,15 @@ def elenco(request):
 def sobre(request):
     return render(request, "sitebrba/sobre.html")
 
+def sobre(request):
+    info = {
+      "titulo": "sitebrba",
+      "autor": "Matheus Fabricio e Gabriel Sinedino",
+      "email": "matheusfab1202@gmail.com - Matheus /n email de Gabriel - Gabriel" ,
+      "descrição": "Site de Breaking Bad",
+    }
+    return render(request, "sitebrba/sobre.html", {"info": info})
+
 
 elenco_brba = [
     {

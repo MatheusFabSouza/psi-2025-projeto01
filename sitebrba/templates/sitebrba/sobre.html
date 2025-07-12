@@ -1,10 +1,25 @@
 {% extends "sitebrba/base.html" %}
+{% load static %}
 
-{% block title %}sitebrba – Sobre{% endblock %}
+{% block title %}{{ info.titulo }}{% endblock %}
 
 {% block content %}
-  <h2>Sobre este projeto</h2>
-  <p>Este site demonstra o uso de <em>templates</em> e herança de HTML no Django.</p>
-  <p>Criado por: Seu Nome</p>
-  <p>Versão do Django: {{ django_version }}</p>
+  <section class="sobre-introducao">
+    <h2>{{ info.titulo }}</h2>
+    <p>{{ info.descricao }}</p>
+  </section>
+
+  <section class="sobre-autor">
+    <h3>Autor</h3>
+    <ul>
+      <li>Nome: {{ info.autor }}</li>
+      <li>Email: <a href="mailto:{{ info.email }}">{{ info.email }}</a></li>
+      <li>Data de criação: {{ info.data_criacao }}</li>
+      <li>Versão do Django: {{ info.django_version }}</li>
+    </ul>
+  </section>
+
+  {# Se você tiver um logo ou imagem para o “Sobre”… #}
+  {# <img src="{% static 'sitebrba/img/logo_sobre.png' %}" alt="Logo sitebrba"> #}
+
 {% endblock %}
