@@ -1,10 +1,6 @@
-from django.urls import path, include
+from django.urls import path
 from . import views
 from django.contrib import admin
-
-urlpatterns = [
-    path('', views.index, name='index'),
-]
 
 urlpatterns = [
     path('admin/', admin.site.urls), 

@@ -1,11 +1,32 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'sitebrba/css/style.css' %}">
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="pt-br">
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body style="background-color: blanchedalmond;">
+    <title>{% block title %}sitebrba{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'sitebrba/css/style.css' %}">
+  </head>
+  <body>
+    <header>
+      <h1>sitebrba</h1>
+      <nav>
+        <a href="{% url 'index' %}">Início</a>
+        <a href="{% url 'elenco' %}">Elenco</a>
+        <a href="{% url 'sobre' %}">Sobre</a>
+      </nav>
+    </header>
 
-</body>
+    <main>
+      {% block content %}
+      {% endblock %}
+    </main>
+
+    <footer>
+      <p>© 2025 sitebrba</p>
+    </footer>
+  </body>
 </html>

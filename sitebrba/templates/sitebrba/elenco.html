@@ -1,0 +1,17 @@
+{% extends "sitebrba/base.html" %}
+
+{% block title %}sitebrba – Elenco{% endblock %}
+
+{% block content %}
+  <h2>Elenco de Breaking Bad</h2>
+  <div class="grid-elenco">
+    {% for p in elenco_brba %}
+      <div class="card-personagem">
+        <img src="{% static p.imagem %}" alt="{{ p.nome }}">
+        <h3>{{ p.nome }} ({{ p.idade_em_serie }} anos)</h3>
+        <p><strong>Função:</strong> {{ p.personagem }}</p>
+        <p>{{ p.descricao }}</p>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}
