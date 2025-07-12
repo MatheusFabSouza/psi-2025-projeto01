@@ -5,21 +5,18 @@
 
 {% block content %}
   <section class="sobre-introducao">
-    <h2>{{ info.titulo }}</h2>
+    <h1>{{ info.titulo }}</h1>
     <p>{{ info.descricao }}</p>
   </section>
 
   <section class="sobre-autor">
-    <h3>Autor</h3>
+    <h2>Autor</h2>
     <ul>
       <li>Nome: {{ info.autor }}</li>
-      <li>Email: <a href="mailto:{{ info.email }}">{{ info.email }}</a></li>
-      <li>Data de criação: {{ info.data_criacao }}</li>
-      <li>Versão do Django: {{ info.django_version }}</li>
+      <li>Email: {{ info.email }}">{{ info.email }}</a></li>
     </ul>
   </section>
 
-  {# Se você tiver um logo ou imagem para o “Sobre”… #}
-  {# <img src="{% static 'sitebrba/img/logo_sobre.png' %}" alt="Logo sitebrba"> #}
+  {# <img src="{% static 'sitebrba/img/logo_sobre.png' %}"> #}
 
 {% endblock %}
