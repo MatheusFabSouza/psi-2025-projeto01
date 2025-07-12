@@ -3,6 +3,15 @@ from django.shortcuts import render
 def inicio(request):
     return render(request, "sitebrba/index.html")
 
+def elenco(request):
+    return render(request, "sitebrba/elenco.html", {
+        "elenco_brba": elenco_brba
+    })
+
+def sobre(request):
+    return render(request, "sitebrba/sobre.html")
+
+
 elenco_brba = [
     {
         "id": 1,
@@ -102,11 +111,3 @@ elenco_brba = [
     },
 ]
 
-def elencobrba(request):
-    context = {
-        "elencobrba": elenco_brba,
-    }
-    return render(request, "sitebrba/elenco.html", context)
-
-def sobre(request):
-    return render(request, "sitebrba/sobre.html")
