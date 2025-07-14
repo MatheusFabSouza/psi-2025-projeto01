@@ -10,13 +10,13 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'sitebrba/css/style.css' %}">
   </head>
-  <body>
+  <body style="background-color:rgb(252, 253, 208);">
     <header>
-    </h1><strong> BrBa </strong></h1>
-      <nav>
-        <a href="{% url 'index' %}">Inicio</a>
-        <a href="{% url 'elenco' %}">Elenco</a>
-        <a href="{% url 'sobre' %}">Sobre</a>
+      <img src="{% static 'sitebrba/img/logo.png' %}" alt="">
+      <nav style="text-align: center; width: 100% ; margin: auto; padding: 5px; font-size: 25px; display: flex; justify-content: center; gap: 50px; background-color: wheat;">
+        <a href="{% url 'index' %}" style="font-size:  50px; font-family: Arial, Helvetica, sans-serif; color: black; text-decoration: none;">Inicio</a>
+        <a href="{% url 'elenco' %}" style="font-size: 50px; font-family: Arial, Helvetica, sans-serif; color: black; text-decoration: none;">Elenco</a>
+        <a href="{% url 'sobre' %}" style="font-size: 50px; font-family: Arial, Helvetica, sans-serif; color: black; text-decoration: none;">Sobre</a>
       </nav>
     </header>
 
