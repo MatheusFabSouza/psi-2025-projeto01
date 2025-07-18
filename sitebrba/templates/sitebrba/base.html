@@ -1,6 +1,4 @@
 {% load static %}
-<link rel="stylesheet" href="{% static 'sitebrba/css/style.css' %}">
-
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -8,24 +6,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}sitebrba{% endblock %}</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'sitebrba/css/style.css' %}">
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <style>
+    body {
+      margin: 0;
+      padding-bottom: 5px; /* espaço pro rodapé fixo não cobrir o conteúdo */
+    }
+    .texto{
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    padding:0 10px;
+     }
+    .rodape-fixo {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #000000;
+      color: white;
+      text-align: center;
+      padding:  1px 0;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+    }
+    .container {
+      position: relative;
+      height: 200px;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .imagem-fundo {
+      width: 100%;
+      display: block;
+      top: px;
+    }
+
+    .imagem-sobreposta {
+      position: absolute;
+      top: 25%;
+      left: 30px;
+      width: 200px;
+    }
+  </style>
   </head>
   <body style="background-color:rgb(252, 253, 208);">
     <header>
-      <img src="{% static 'sitebrba/img/logo.png' %}" alt="">
-      <nav style="text-align: center; width: 100% ; margin: auto; padding: 5px; font-size: 25px; display: flex; justify-content: center; gap: 50px; background-color: wheat;">
+      <div class="container">
+        <img class="imagem-fundo" src="{% static 'sitebrba/img/Walter.jpg' %}" alt="">
+        <img class="imagem-sobreposta" src="{% static 'sitebrba/img/LogoBrba.png' %}" alt="">
+      </div>
+      <nav style="background-color: wheat; text-align: center; word-spacing: 50px;">
         <a href="{% url 'index' %}" style="font-size:  50px; font-family: Arial, Helvetica, sans-serif; color: black; text-decoration: none;">Inicio</a>
         <a href="{% url 'elenco' %}" style="font-size: 50px; font-family: Arial, Helvetica, sans-serif; color: black; text-decoration: none;">Elenco</a>
         <a href="{% url 'sobre' %}" style="font-size: 50px; font-family: Arial, Helvetica, sans-serif; color: black; text-decoration: none;">Sobre</a>
       </nav>
     </header>
 
-    <main>
+    <main class="texto" >
       {% block content %}
       {% endblock %}
     </main>
 
-    <footer>
+    <footer class="rodape-fixo">
       <p>© 2025 SiteBrBa.<br> Direitos Reservados</p>
     </footer>
   </body>

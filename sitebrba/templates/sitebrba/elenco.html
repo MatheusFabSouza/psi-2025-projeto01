@@ -8,7 +8,7 @@
   <div class="grid-elenco">
     {% for p in elenco_brba %}
     <!--ajeita as posições das imagens-->
-      <div class="card-personagem" style="text-align: center; display: grid; grid-template-columns: repeat(2, 260px); gap: 10px">
+      <div class="card-personagem" style="text-align: center;; gap: 10px">
         <img src="{% static p.imagem %}" style="height: 260px; width: 190px;">
         <h3 style="font-family: Arial, Helvetica, sans-serif">{{ p.nome }} ({{ p.idade_em_serie }} anos)</h3>
         <p style="font-family: Arial, Helvetica, sans-serif"><strong>Função:</strong> {{ p.personagem }}</p>
