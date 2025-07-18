@@ -10,12 +10,30 @@
     <style>
     body {
       margin: 0;
-      padding-bottom: 5px; /* espaço pro rodapé fixo não cobrir o conteúdo */
+      padding-bottom: 90px;
+    }
+    .card-texto{
+      font-family: Arial, Helvetica, sans-serif;
+      color: rgb(0, 0, 0);
+      font-weight: bold;
+    }
+    .grid-elenco{
+      text-align: center;
+      display: grid;
+      grid-template-columns: repeat(3, 261px);
+      gap: 50px;
+      justify-content: center;
+      padding-top: 5%;
+    }
+    .card-personagem{
+      background: linear-gradient(to right, #66bb6a, #1b5e20); 
+      padding-top: 15px; 
+      border-radius: 15px;
     }
     .texto{
-    text-decoration: none;
-    font-family: Arial, Helvetica, sans-serif;
-    padding:0 10px;
+      text-decoration: none;
+      font-family: Arial, Helvetica, sans-serif;
+      padding:0 10px;
      }
     .rodape-fixo {
       position: fixed;
@@ -37,6 +55,7 @@
 
     .imagem-fundo {
       width: 100%;
+      height: auto;
       display: block;
       top: px;
     }
@@ -47,18 +66,36 @@
       left: 30px;
       width: 200px;
     }
+    .texto-cabeçalho{
+      font-size:  50px;
+      font-family:Arial, Helvetica, sans-serif; 
+      color: rgb(255, 255, 255); 
+      text-decoration: none;
+      background-color: rgb(0, 0, 0); text-align: center; word-spacing: 50px;
+    }
+    a {
+      color: rgb(255, 255, 255);
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 3.3s ease, transform 0.1s ease;
+    }
+
+    a:hover {
+      transform: scale(1.1);
+      color: darkgreen;
+    }
   </style>
   </head>
-  <body style="background-color:rgb(252, 253, 208);">
+  <body style="background-color:rgb(255, 255, 255);">
     <header>
       <div class="container">
-        <img class="imagem-fundo" src="{% static 'sitebrba/img/Walter.jpg' %}" alt="">
-        <img class="imagem-sobreposta" src="{% static 'sitebrba/img/LogoBrba.png' %}" alt="">
+        <img class="imagem-fundo" src="{% static 'sitebrba/img/Intro.jpg' %}" alt="">
+        <img class="imagem-sobreposta" src="{% static 'sitebrba/img/LogoBranca.png' %}" alt="">
       </div>
-      <nav style="background-color: wheat; text-align: center; word-spacing: 50px;">
-        <a href="{% url 'index' %}" style="font-size:  50px; font-family: Arial, Helvetica, sans-serif; color: black; text-decoration: none;">Inicio</a>
-        <a href="{% url 'elenco' %}" style="font-size: 50px; font-family: Arial, Helvetica, sans-serif; color: black; text-decoration: none;">Elenco</a>
-        <a href="{% url 'sobre' %}" style="font-size: 50px; font-family: Arial, Helvetica, sans-serif; color: black; text-decoration: none;">Sobre</a>
+      <nav class="texto-cabeçalho">
+        <a href="{% url 'index' %}" >Inicio</a>
+        <a href="{% url 'elenco' %}" >Elenco</a>
+        <a href="{% url 'sobre' %}" >Sobre</a>
       </nav>
     </header>
 
