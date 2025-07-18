@@ -4,12 +4,13 @@
 {% block title %}{{ info.titulo }}{% endblock %}
 
 {% block content %}
-  <section class="sobre-introducao">
-    <h1 class="Texto">{{ info.titulo }}</h1>
-    <p class="Texto"> {{ info.descricao }}</p>
+  <section class="sobre-introducao, texto-inicio">
+    <!-- Aumenta o tamanho da fonte, adiciona o texto -->
+    <h1 class="texto-inicio">{{ info.titulo }}</h1>
+    <p class="texto-inicio" style="text-align: justify; padding: 0 500px; font-size: large;"> {{ info.descricao }}</p>
   </section>
-
-  <section class="sobre-autor, Texto">
+<!--Ajusta a decoração, não sei onde deixa os texto-->
+  <section class="sobre-autor">
     <h2 >Autor</h2>
     <ul>
       <li >Nome: {{ info.autor }}</li>

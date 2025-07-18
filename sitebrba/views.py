@@ -14,9 +14,9 @@ def sobre(request):
 def sobre(request):
     info = {
       "titulo": "sitebrba",
+      "descricao": "Esse site foi criado devido um projeto de PSI, a escolha do tema de Breaking Bad foi feito por Matheus,",
       "autor": "Matheus Fabricio e Gabriel Sinedino",
       "email": "matheusfab1202@gmail.com - Matheus /n email de Gabriel - Gabriel" ,
-      "descrição": "Site de Breaking Bad",
     }
     return render(request, "sitebrba/sobre.html", {"info": info})
 
