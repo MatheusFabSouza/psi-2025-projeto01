@@ -3,7 +3,7 @@ from . import views
 from django.contrib import admin
 
 urlpatterns = [
-    path("",         views.inicio, name="index"),
+    path("",         views.index, name="index"),
     path("elenco/",  views.elenco,  name="elenco"),
     path("sobre/",   views.sobre,   name="sobre"),
 ]
