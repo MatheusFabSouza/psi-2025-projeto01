@@ -1,22 +1,23 @@
 {% extends "sitebrba/base.html" %}
-{% load static %}
-
-{% block title %}sitebrba – Elenco{% endblock %}
-
+{% load static %} 
 {% block content %}
-  <h3 style="text-align: center; font-size: 50px; font-family: Arial, Helvetica Neue, Helvetica, sans-serif;"> <strong> Elenco de Breaking Bad </strong></h3>
-
+  <h2>Elenco</h2>
   <div class="grid-elenco">
     {% for p in elenco_brba %}
-    <!--ajeita as posições das imagens-->
       <div class="card-personagem">
-        
-        <img src="{% static p.imagem %}" style="border-radius:10px; text-decoration: none; width: 190px; height: 250px;">
-
-        <h3 class="card-texto">{{ p.nome }} ({{ p.idade_em_serie }} anos)</h3>
-        <p class="card-texto"><strong>Função:</strong> {{ p.personagem }}</p>
-        <p class="card-texto">{{ p.descricao }}</p>
+        {% if p.imagem %}
+          <img src="{{ p.imagem.url }}" alt="{{ p.nome }}" style="width:150px">
+        {% else %}
+          <img src="{% static 'sitebrba/img/placeholder.png' %}" style="width:150px">
+        {% endif %}
+        <h3>{{ p.nome }}</h3>
+        <p>Idade: {{ p.idade_em_serie }}</p>
+        <p>Posição: {{ p.posicao }}</p>
+        <p>Nascimento: {{ p.nascimento }}</p>
+        <p>{{ p.descricao }}</p>
       </div>
+    {% empty %}
+      <p>Nenhum membro do elenco.</p>
     {% endfor %}
   </div>
 {% endblock %}

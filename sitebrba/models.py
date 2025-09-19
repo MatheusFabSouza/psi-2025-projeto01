@@ -1,12 +1,12 @@
 from django.db import models
 
 class Elenco(models.Model):
-    # Removemos o id explícito; o Django criará automaticamente um id IntegerField PK.
-    nome = models.CharField(max_length=50)
-    idade_em_serie = models.CharField(max_length=2, blank=True)
-    personagem = models.CharField(max_length=50, blank=True)
+    nome = models.CharField(max_length=200)
+    idade_em_serie = models.IntegerField(null=True, blank=True)
+    posicao = models.CharField(max_length=100, blank=True)
+    nascimento = models.CharField(max_length=200, blank=True)
     descricao = models.TextField(blank=True)
-    imagem = models.ImageField(upload_to="elenco/", null=True, blank=True)
+    imagem = models.ImageField(upload_to="sitebrba/img/", blank=True, null=True)
 
     def __str__(self):
         return self.nome
@@ -14,15 +14,3 @@ class Elenco(models.Model):
     class Meta:
         verbose_name_plural = "Elenco"
 
-
-class Sobre(models.Model):
-    titulo = models.CharField(max_length=100)
-    descricao = models.TextField(blank=True)
-    autor = models.CharField(max_length=100, blank=True)
-    email = models.EmailField(max_length=100, blank=True)
-
-    def __str__(self):
-        return self.titulo
-
-    class Meta:
-        verbose_name_plural = "Sobre"
